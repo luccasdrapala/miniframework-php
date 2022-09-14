@@ -8,6 +8,7 @@ class Route {
 
     public function __construct() {
         $this->initRoutes();
+        $this->run($this->getUrl());
     }
 
     public function getRoutes() {
@@ -35,8 +36,12 @@ class Route {
         $this->setRoutes($routes);
     }
 
+    public function run($url) {
+        echo $url;
+    }
+
     public function getUrl() {
-        return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); //retorna o path utilizado pelo usuário "/"
     }
 }
 ?>
