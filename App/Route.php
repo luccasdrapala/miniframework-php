@@ -37,7 +37,17 @@ class Route {
     }
 
     public function run($url) {
-        echo $url;
+        foreach ($this->getRoutes() as $key => $route){
+
+            if($url == $route['route']) {
+                $class = "App\\Controllers\\". ucfirst($route['controller']);
+
+                $controller = new $class;
+                $action = $route['action'];
+
+                $controller->$action();
+            }
+        }
     }
 
     public function getUrl() {
