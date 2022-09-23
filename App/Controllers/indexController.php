@@ -5,11 +5,11 @@ namespace App\Controllers;
 class IndexController {
 
     public function index() {
-        echo 'chegamos no controller index';
+        require_once "../App/Views/index/index.phtml";
     }
 
     public function sobreNos() {
-        echo 'chegamos no controller sobreNos';
+        require_once "../App/Views/index/sobreNos.phtml";
     }
 }
 
