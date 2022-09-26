@@ -1,4 +1,7 @@
 <h1>Sobre-nos</h1><br>
 <?php
-    echo 'chegamos no controller sobreNos';
+    echo 'chegamos no controller sobreNos<br>';
+    foreach($this->view->dados as $index => $valor){
+        echo $index . " - " . $valor . '<br>'; 
+    }
 ?>

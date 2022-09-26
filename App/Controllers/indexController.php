@@ -4,11 +4,19 @@ namespace App\Controllers;
 
 class IndexController {
 
+    private $view;
+
+    public function __construct() {
+        $this->view = new \stdClass();
+    } //metodo nativo do php para criar objetos estaticos
+
     public function index() {
+        $this->view->dados = array('sofa', 'Cadeira', 'Cama');
         $this->render('index');
     }
 
     public function sobreNos() {
+        $this->view->dados = array('notebook', 'forabozo', 'fazoL');
         $this->render('sobreNos');
     }
 

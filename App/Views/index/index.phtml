@@ -1,5 +1,8 @@
 <h1>Index</h1><br>
 
 <?php
-    echo 'chegamos no controller index';
+    echo 'chegamos no controller index<br>';
+    foreach($this->view->dados as $index => $valor){
+        echo $index . " - " . $valor . '<br>'; 
+    }
 ?>
