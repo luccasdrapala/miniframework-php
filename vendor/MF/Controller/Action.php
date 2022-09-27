@@ -11,6 +11,11 @@ abstract class Action {
     } //metodo nativo do php para criar objetos estaticos
 
     protected function render($view) {
+        $this->view->page = $view;
+        require_once "../App/Views/layout1.phtml";
+    }
+
+    protected function content() {
         //echo(get_class($this)); retorna o local da classe "App/.../..."
 
         $classAtual = get_class($this);
@@ -20,7 +25,7 @@ abstract class Action {
         // usa o padrão do controller para setar a pasta que esta dentro da pasta Views
         
         //forma dinamico de acesso a determinada view
-        require_once "../App/Views/". $classAtual ."/" .$view.".phtml";    
+        require_once "../App/Views/". $classAtual ."/" .$this->view->page.".phtml";
     }
 }
 
