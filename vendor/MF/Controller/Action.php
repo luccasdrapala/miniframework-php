@@ -10,9 +10,14 @@ abstract class Action {
         $this->view = new \stdClass();
     } //metodo nativo do php para criar objetos estaticos
 
-    protected function render($view) {
+    protected function render($view, $layout) {
         $this->view->page = $view;
-        require_once "../App/Views/layout1.phtml";
+
+        if(file_exists("../App/Views/". $layout .".phtml")){
+            require_once "../App/Views/". $layout .".phtml";
+        } else {
+            $this->content();
+        }
     }
 
     protected function content() {
