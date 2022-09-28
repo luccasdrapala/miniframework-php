@@ -1,5 +1,6 @@
 <?php
 
+// use PDO; use PDOException;
 namespace App;
 
 class Connection {
@@ -8,16 +9,17 @@ class Connection {
 
         try {
 
-            $conn = new PDO(
+            $conn = new \PDO(
                 'mysql:host=localhost;dbname;charset=utf8',
                 'root',
                 ''
-            );
+            ); 
+
             return $conn;
 
-        } catch(PDOException $e) {
+        } catch(\PDOException $e) {
             //..tratar erro de alguma forma
-            echo $e;
+            echo '# # # ERRO no PHP # # # ' . $e;
         }
     }
 

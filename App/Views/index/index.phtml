@@ -2,7 +2,13 @@
 
 <?php
     echo 'chegamos no controller index<br>';
-    foreach($this->view->dados as $index => $valor){
-        echo $index . " - " . $valor . '<br>'; 
-    }
+
+    echo '<pre>';
+    print_r($this->view->dados);
+    echo '</pre>';
+
+    // foreach($this->view->dados as $index => $valor){
+    //     // echo $index . " - " . $valor . '<br>';
+        
+    // }
 ?>
