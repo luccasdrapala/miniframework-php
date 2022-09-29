@@ -2,8 +2,11 @@
 
 namespace App\Controllers;
 
+//recursos miniframework
 use MF\Controller\Action;
-use App\Connection;
+use MF\Model\Container;
+
+//models
 use App\Models\produto;
 use App\Models\info;
 
@@ -13,10 +16,8 @@ class IndexController extends Action{
         // $this->view->dados = array('sofa', 'Cadeira', 'Cama');
 
         // instancia de conexao do PDO
-        $conn = Connection::getDb();
-
         // instanciar o modelo paa alteralo
-        $produto = new Produto($conn);
+        $produto = Container::getModel('Produto');
 
         $this->view->dados = $produto->getProdutos();
 
@@ -27,10 +28,8 @@ class IndexController extends Action{
         // $this->view->dados = array('notebook', 'forabozo', 'fazoL');
 
         // instancia de conexao do PDO
-        $conn = Connection::getDb();
-
         // instanciar o modelo paa alteralo
-        $info = new info($conn);
+        $info = Container::getModel('info');
 
         $this->view->dados = $info->getInfo();
 
