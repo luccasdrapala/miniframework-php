@@ -5,6 +5,7 @@ namespace App\Controllers;
 use MF\Controller\Action;
 use App\Connection;
 use App\Models\produto;
+use App\Models\info;
 
 class IndexController extends Action{
 
@@ -26,8 +27,12 @@ class IndexController extends Action{
         // $this->view->dados = array('notebook', 'forabozo', 'fazoL');
 
         // instancia de conexao do PDO
+        $conn = Connection::getDb();
 
         // instanciar o modelo paa alteralo
+        $info = new info($conn);
+
+        $this->view->dados = $info->getInfo();
 
         $this->render('sobreNos', 'layout2');
     }

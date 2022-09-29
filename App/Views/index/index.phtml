@@ -3,12 +3,13 @@
 <?php
     echo 'chegamos no controller index<br>';
 
-    echo '<pre>';
+    foreach($this->view->dados as $index => $produto){
+        // echo $index . " - " . $valor . '<br>';
+        echo 'ID: ' . $produto['id'] .' - '. 'Descrição: ' .$produto['descricao']. ' - ' .'Preço: ' . $produto['preco'];
+        echo '<br>';
+    }
+
+    echo '<hr><pre>';
     print_r($this->view->dados);
     echo '</pre>';
-
-    // foreach($this->view->dados as $index => $valor){
-    //     // echo $index . " - " . $valor . '<br>';
-        
-    // }
 ?>

@@ -1,7 +1,15 @@
 <h1>Sobre-nos</h1><br>
 <?php
-    echo 'chegamos no controller sobreNos<br>';
-    foreach($this->view->dados as $index => $valor){
-        echo $index . " - " . $valor . '<br>'; 
+
+    foreach($this->view->dados as $index => $infos){
+        echo 'ID: ' . $infos['id'] .' - '. 'Titulo: ' .$infos['titulo']. ' - ' .'Descricao: ' . $infos['descricao'];
+        echo '<br>'; 
     }
+    
+    echo '<hr><pre>';
+    print_r($this->view->dados);
+    echo '</pre>';
+
+    
+    
 ?>
