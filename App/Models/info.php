@@ -1,14 +1,9 @@
 <?php
 
 namespace App\Models;
+use MF\Model\Model;
 
-class info {
-
-    protected $db;
-
-    public function __construct(\PDO $db) {
-        $this->db = $db;
-    }
+class info extends Model{
 
     public function getInfo() {
         // return array('fazol', 'lulalivre');

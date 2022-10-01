@@ -1,14 +1,9 @@
 <?php
 
 namespace App\Models;
+use MF\Model\Model;
 
-class Produto {
-
-    protected $db;
-
-    public function __construct(\PDO $db) {
-        $this->db = $db;
-    }
+class Produto extends Model{
 
     public function getProdutos() {
         // return array('fazol', 'lulalivre');
